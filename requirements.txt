@@ -1,0 +1,27 @@
+# Flask Hotel Website Requirements
+# Core Flask Framework
+Flask==3.0.0
+
+# Form Handling
+Flask-WTF==1.2.1
+WTForms==3.1.1
+
+# Additional Flask Extensions (commonly used with Flask)
+Werkzeug==3.0.1
+
+# Development and Production Dependencies
+# Uncomment the following if you plan to deploy to production
+# gunicorn==21.2.0
+
+# Environment Variables (optional - for .env file support)
+# python-dotenv==1.0.0
+
+# Database (if you plan to add database functionality later)
+# Flask-SQLAlchemy==3.1.1
+# SQLAlchemy==2.0.23
+
+# User Authentication (if you plan to add user management later)
+# Flask-Login==0.6.3
+
+# Email Support (if you plan to add email functionality later)
+# Flask-Mail==0.9.1 

@@ -1,5 +1,1 @@
-# Environment files
-.env
-.env.*
-*.env
-*.env.*
+env_template.txt
