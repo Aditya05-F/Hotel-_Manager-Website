@@ -1,0 +1,93 @@
+<!-- templates/rooms.html -->
+{% extends "layout.html" %}
+
+{% block content %}
+<!-- Background video -->
+<div class="video-background">
+    <video autoplay muted loop playsinline>
+        <source src="{{ url_for('static', filename='video/rooms.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<!-- Overlay content -->
+<div class="page-content">
+    <div class="page-header text-white text-center">
+        <div class="container">
+            <h1><i class="fas fa-bed"></i> Rooms & Rates</h1>
+            <p class="lead">Choose from our comfortable and luxurious accommodations</p>
+        </div>
+    </div>
+
+    <section class="section py-5">
+        <div class="container">
+            <div class="row">
+                {% for room in rooms %}
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card room-card h-100 shadow-sm">
+                        <!-- Room image -->
+                        <img src="{{ room.image }}" alt="{{ room.name }}" class="card-img-top room-img">
+
+                        <!-- Room name -->
+                        <div class="card-header text-center bg-white">
+                            <h4 class="card-title mb-0">{{ room.name }}</h4>
+                        </div>
+
+                        <!-- Description & Features -->
+                        <div class="card-body">
+                            <p class="card-text text-muted">{{ room.description }}</p>
+                            <ul class="list-unstyled">
+                                {% for feature in room.features %}
+                                <li><i class="fas fa-check text-success me-2"></i> {{ feature }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+
+                        <!-- Price & Book button -->
+                        <div class="card-footer text-center bg-white">
+                            <div class="price fw-bold text-primary mb-2">{{ room.price }}</div>
+                            <a href="#" class="btn btn-custom">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Styles for video and overlay -->
+<style>
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.page-content {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.85); /* Light white overlay for readability */
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.room-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+</style>
+{% endblock %}

@@ -1,0 +1,80 @@
+<!-- templates/menu.html -->
+{% extends "layout.html" %}
+{% block content %}
+<div class="page-header">
+    <div class="container">
+        <h1><i class="fas fa-utensils"></i> Dining Menu</h1>
+        <p class="lead">Savor our delicious cuisine prepared by expert chefs</p>
+    </div>
+</div>
+
+<section class="section">
+    <div class="container">
+
+       <!-- Starters -->
+<div class="menu-section mb-5">
+    <h2 class="section-title"><i class="fas fa-bowl-hot"></i> Starters</h2>
+    <div class="row">
+        {% for item in menu.starters %}
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card menu-card h-100">
+                {% if item.image %}
+                <img src="{{ item.image }}" class="card-img-top" alt="{{ item.name }}">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.name }}</h5>
+                    <p class="card-text">{{ item.description }}</p>
+                    <div class="price">{{ item.price }}</div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+        <!-- Main Course -->
+<div class="menu-section mb-5">
+    <h2 class="section-title"><i class="fas fa-drumstick-bite"></i> Main Course</h2>
+    <div class="row">
+        {% for item in menu.main_course %}
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card menu-card h-100">
+                {% if item.image %}
+                <img src="{{ item.image }}" class="card-img-top" alt="{{ item.name }}">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.name }}</h5>
+                    <p class="card-text">{{ item.description }}</p>
+                    <div class="price">{{ item.price }}</div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+      <!-- Desserts -->
+<div class="menu-section mb-5">
+    <h2 class="section-title"><i class="fas fa-ice-cream"></i> Desserts</h2>
+    <div class="row">
+        {% for item in menu.desserts %}
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card menu-card h-100">
+                {% if item.image %}
+                <img src="{{ item.image }}" class="card-img-top" alt="{{ item.name }}">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.name }}</h5>
+                    <p class="card-text">{{ item.description }}</p>
+                    <div class="price">{{ item.price }}</div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<!-- Video Background -->
+<div class="video-background">
+    <video autoplay muted loop playsinline>
+        <source src="{{ url_for('static', filename='video/bg.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<!-- Hero Section -->
+<div class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1 class="hero-title">Welcome to Paradise Stay</h1>
+        <p class="hero-subtitle">Escape. Relax. Explore.</p>
+        <div class="hero-buttons">
+            <a href="{{ url_for('rooms') }}" class="btn btn-custom">
+                <i class="fas fa-bed"></i> View Rooms
+            </a>
+            <a href="{{ url_for('menu') }}" class="btn btn-custom">
+                <i class="fas fa-utensils"></i> Dining Menu
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Features Section -->
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card text-center">
+                    <i class="fas fa-swimming-pool fa-3x text-primary mb-3"></i>
+                    <h4>Premium Amenities</h4>
+                    <p>Enjoy our world-class facilities including swimming pool, spa, and fitness center.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card text-center">
+                    <i class="fas fa-map-marker-alt fa-3x text-primary mb-3"></i>
+                    <h4>Prime Location</h4>
+                    <p>Located in the heart of Goa, minutes away from beautiful beaches and attractions.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card text-center">
+                    <i class="fas fa-concierge-bell fa-3x text-primary mb-3"></i>
+                    <h4>24/7 Service</h4>
+                    <p>Our dedicated staff is available round the clock to ensure your comfort and satisfaction.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
