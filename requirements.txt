@@ -9,8 +9,7 @@ WTForms==3.1.1
 # Additional Flask Extensions (commonly used with Flask)
 Werkzeug==3.0.1
 
-Development and Production Dependencies
-Uncomment the following if you plan to deploy to production
+
 gunicorn==21.2.0
 
 # Environment Variables (optional - for .env file support)
