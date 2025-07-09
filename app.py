@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash,session
+from flask import Flask, render_template, request, redirect, url_for, flash
 from forms import LoginForm, SignupForm
 from datetime import datetime
 
@@ -8,10 +8,6 @@ app.config['SECRET_KEY'] = 'your-secret-key-here'
 @app.route('/')
 def home():
     return render_template('home.html', title='Paradise Stay - Home')
-
-@app.route('/home')
-def home1():
-    return render_template('home1.html', title='Paradise Stay - Home')
 
 @app.route('/rooms')
 def rooms():
@@ -39,9 +35,6 @@ def rooms():
         }
 
     ]
-    if not session.get('logged_in'):
-        flash('Please log in to view the Rooms page.', 'warning')
-        return redirect(url_for('login'))
     return render_template('rooms.html', title='Rooms & Rates', rooms=rooms_data)
 
 @app.route('/menu')
@@ -111,31 +104,19 @@ def menu():
 
 
     }
-    if not session.get('logged_in'):
-        flash('Please log in to view the Menu page.', 'warning')
-        return redirect(url_for('login'))
     return render_template('menu.html', title='Dining Menu', menu=menu_data)
 
 @app.route('/contact')
 def contact():
-    if not session.get('logged_in'):
-        flash('Please log in to view the Contact page.', 'warning')
-        return redirect(url_for('login'))
     return render_template('contact.html', title='Contact Us')
-
-from flask import Flask, render_template, request, redirect, url_for, flash, session
-# session is now used
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        # Assume login is valid
-        session['logged_in'] = True  # ✅ Set login state
         flash('Login successful!', 'success')
         return redirect(url_for('home'))
     return render_template('login.html', title='Login', form=form)
-
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -147,34 +128,7 @@ def signup():
 
 @app.route('/about')
 def about():
-    if not session.get('logged_in'):
-        flash('Please log in to view the About page.', 'warning')
-        return redirect(url_for('login'))
     return render_template('about.html', title='About Us')
-
-
-@app.route('/logout')
-def logout():
-    session.pop('logged_in', None)
-    flash('You have been logged out.', 'info')
-    return redirect(url_for('login'))
-
-@app.route('/book', methods=['GET', 'POST'])
-def book():
-    if request.method == 'POST':
-        name = request.form.get('name')
-        email = request.form.get('email')
-        room_type = request.form.get('room_type')
-        check_in = request.form.get('check_in')
-        check_out = request.form.get('check_out')
-
-        # Here, you can store the booking in a database or a file
-        flash(f"Thank you {name}! Your {room_type} is booked from {check_in} to {check_out}.", 'success')
-        return redirect(url_for('home'))
-
-    return render_template('book.html', title='Book Room')
-
-
 
 if __name__ == '__main__':
     app.run(debug=True)

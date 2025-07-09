@@ -1,64 +1,13 @@
+<!-- templates/about.html -->
 {% extends "layout.html" %}
 {% block content %}
-
-<!-- Brand Header -->
-<div class="brand-header">
-    Hotel & Restaurant - Excellent Services & Good Prices
+<div class="page-header">
+    <div class="container">
+        <h1><i class="fas fa-info-circle"></i> About Paradise Stay</h1>
+        <p class="lead">Discover our story and commitment to excellence</p>
+    </div>
 </div>
 
-<!-- Page Header -->
-<div class="hero-header">
-    <h1><i class="fas fa-info-circle"></i> About Paradise Stay</h1>
-    <p class="lead">Discover our story and commitment to excellence</p>
-</div>
-
-<!-- About Section -->
-<section class="about-section">
-    <!-- Card 1 - Healthy Dinners -->
-    <div class="about-card">
-        <div class="about-image">
-            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1000&q=80" alt="Elegant Restaurant Interior">
-        </div>
-        <div class="about-content">
-            <h2>Healthy dinners</h2>
-            <p>At Paradise Stay, we believe that exceptional dining experiences are at the heart of memorable stays. Our award-winning restaurant offers a carefully curated menu featuring fresh, locally-sourced ingredients prepared by our world-class chefs.</p>
-            <p>From traditional Goan specialties to international cuisine, every dish is crafted with passion and attention to detail, ensuring that your dining experience is nothing short of extraordinary.</p>
-            <a href="{{ url_for('contact') }}" class="contact-btn">CONTACT US</a>
-
-        </div>
-    </div>
-
-    <!-- Card 2 - About Us -->
-    <div class="about-card">
-        <div class="about-image">
-            <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1000&q=80" alt="Modern Restaurant Interior">
-        </div>
-        <div class="about-content">
-            <h2>About Us</h2>
-            <p>Paradise Stay has been a beacon of luxury and comfort in Goa for over two decades. Founded with a vision to provide guests with an unforgettable experience, we combine traditional Indian hospitality with modern amenities.</p>
-            <p>Our commitment to excellence has made us one of the most sought-after destinations in Goa, where every guest is treated like family and every moment becomes a cherished memory.</p>
-            <a href="{{ url_for('contact') }}" class="contact-btn">CONTACT US</a>
-
-
-        </div>
-    </div>
-
-    <!-- Card 3 - Creative Taste -->
-    <div class="about-card">
-        <div class="about-image">
-            <img src="https://media.istockphoto.com/id/104704117/photo/restaurant-plates.jpg?s=612x612&w=0&k=20&c=MhFdN_qVgzoHov-kgFx0qWSW0nZht4lZV1zinC3Ea44=" alt="Creative Restaurant Setup">
-        </div>
-        <div class="about-content">
-            <h2>Creative taste in your plate</h2>
-            <p>Our culinary team takes pride in creating innovative dishes that blend traditional flavors with contemporary presentation. Each plate tells a story of culinary artistry and passion.</p>
-            <p>From farm-to-table ingredients to creative fusion cuisine, we ensure that every meal is a celebration of taste, texture, and visual appeal that will leave you craving for more.</p>
-            <a href="{{ url_for('contact') }}" class="contact-btn">CONTACT US</a>
-
-        </div>
-    </div>
-</section>
-
-<!-- Additional Section -->
 <section class="section">
     <div class="container">
         <div class="row">
@@ -82,5 +31,4 @@
         </div>
     </div>
 </section>
-
 {% endblock %}
