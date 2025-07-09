@@ -46,7 +46,10 @@
                         <!-- Price & Book button -->
                         <div class="card-footer text-center bg-white">
                             <div class="price fw-bold text-primary mb-2">{{ room.price }}</div>
-                            <a href="#" class="btn btn-custom">Book Now</a>
+                            <a href="{{ url_for('book') }}" class="btn btn-warning text-white">
+    <i class="fas fa-calendar-check"></i> Book Now
+</a>
+
                         </div>
                     </div>
                 </div>
